@@ -1,32 +1,53 @@
-import router from '@ohos.router'
+import { ToDoItem } from '../view/ToDoItem'
+
 @Entry
 @Component
 struct Index {
-  @State helloWorld: string = 'Hello World'
-  @State nextMessage: string = 'Next'
+  @State textAreaValue: string = ""
+  @State items: string[] = ['1', '2']
 
   build() {
-    Row() {
-      Column() {
-        Text(this.helloWorld)
-          .fontSize(50)
+    Column() {
+      Row() {
+        Text("待办事项")
+          .fontSize(40)
           .fontWeight(FontWeight.Bold)
-        Button(){
-          Text(this.nextMessage)
-            .fontColor(Color.Red)
-            .fontSize(30)
-        }
-        .type(ButtonType.Circle)
-        .margin({
-          top: 20
-        })
-        .backgroundColor(Color.Green)
-        .width('40%')
-        .height('10%')
-        .onClick(() => {router.pushUrl({url : 'pages/Second'})})
+          .textAlign(TextAlign.Start)
       }
-      .width('100%')
+
+      List() {
+        ForEach(this.items, (item, index) => {
+          ListItem() {
+            ToDoItem({ itemValue: item, itemIndex: index })
+          }.backgroundColor(Color.White)
+        })
+      }
+      .divider({ strokeWidth: "1" })
+
+      Row() {
+        Column() {
+          TextArea({ "placeholder": "添加待办事项" })
+            .height(40)
+            .width(250)
+            .margin({ left: 20 })
+            .onChange((itemValue) => {
+              this.textAreaValue = itemValue
+            })
+        }
+
+        Column() {
+          Button("添加", { type: ButtonType.Capsule })
+            .onClick(() => {
+              if (this.textAreaValue.trim() != '') {
+                this.items.push(this.textAreaValue)
+              }
+            })
+            .margin({ left: 20 })
+        }
+      }
+
     }
     .height('100%')
+    .backgroundColor(Color.Grey)
   }
 }
