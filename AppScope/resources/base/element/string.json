@@ -3,6 +3,67 @@
     {
       "name": "app_name",
       "value": "huawei_0508_1_helloworld"
+    },
+    {
+      "name": "Login_slogan",
+      "value": "登录界面"
+    },
+    {
+      "name": "Login_introduction",
+      "value": "登陆账号以使用更多服务"
+    },
+    {
+      "name": "Username",
+      "value": "账号"
+    },
+    {
+      "name": "Password",
+      "value": "密码"
+    },
+    {
+      "name": "MessageVerifyLogin",
+      "value": "短信验证码登录"
+    },
+    {
+      "name": "Forget_password",
+      "value": "忘记密码"
+    },
+    {
+      "name": "Login",
+      "value": "登录"
+    },
+    {
+      "name": "Register",
+      "value": "注册账号"
+    },
+    {
+      "name": "Other_login_way",
+      "value": "其他方式登录"
+    },
+    {
+      "name": "Work_objectives",
+      "value": "工作目标"
+    },
+    {
+      "name": "First_quarter_operating_goals",
+      "value": "第一季度运营目标"
+    },
+    {
+      "name": "User_increased",
+      "value": "实现用户量与用户活跃度提升"
+    },
+    {
+      "name": "Overall_progress",
+      "value": "整体进度"
+    },
+    {
+      "name": "Update_time",
+      "value": "更新时间"
+    },
+    {
+      "name": "Sub_target",
+      "value": "子目标"
     }
+
   ]
 }
