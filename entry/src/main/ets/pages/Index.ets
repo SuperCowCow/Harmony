@@ -1,8 +1,8 @@
 import router from '@ohos.router'
+import CommonConstants from '../constants/CommonConstants'
 import { OtherLoginWay } from '../view/OtherLoginWay'
 @Entry
 @Component
-@Preview
 struct Index {
 
   @State
@@ -16,7 +16,7 @@ struct Index {
       // logo
       Image($r('app.media.login'))
         .align(Alignment.Center)
-        .height(100)
+        .height(CommonConstants.LOGIN_IMAGE_HEIGHT)
         .width(100)
         .margin({top: 70, bottom: 30})
       // text
@@ -56,7 +56,7 @@ struct Index {
       .margin({bottom: 80})
 
       // login button
-      Button($r("app.string.Forget_password"),{type: ButtonType.Capsule})
+      Button($r("app.string.Login"),{type: ButtonType.Capsule})
         .onClick(() =>{
           if (this.username != "" && this.password != "") {
             router.pushUrl({url: "pages/Content" })

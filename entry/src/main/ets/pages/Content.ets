@@ -1,10 +1,13 @@
 import router from '@ohos.router'
 @Entry
 @Component
+@Preview
 struct Content {
   
   @State
-  targets: string[] = ["目标1"]
+  targets: string[] = ["目标1", "目标2", "目标3"]
+  @State
+  value: number = 1
   
   build() {
     List(){
@@ -42,10 +45,13 @@ struct Content {
                   .fontSize(15)
               }
               Column(){
-                Circle({ width: 50, height: 50})
-                  .fillOpacity(0)
-                  .stroke("#f2f2f2")
-                  .strokeWidth(3)
+                Stack(){
+                  Row(){
+                    Text(this.value.toString()).fontColor(Color.Blue)
+                    Text("/" + this.targets.length)
+                  }
+                  Progress({value: this.value, total: this.targets.length, type: ProgressType.Ring})
+                }
               }
             }
             .width("100%")
