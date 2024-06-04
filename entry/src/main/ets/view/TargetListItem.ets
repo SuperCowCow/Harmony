@@ -16,9 +16,6 @@ export default struct TargetListItem {
   @State
   isExpanded: boolean = false
 
-  @Consume
-  countOfFinishedTargets: number
-
   onClickIndexChanged() {
     if (this.clickIndex !== this.index) {
       this.isExpanded = false;
